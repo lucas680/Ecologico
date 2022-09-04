@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Bar Chart</title>
+	<script src="Chart.min.js"></script>
+	<script src="utils.js"></script>
+	<style>
+		/* canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		} */
+	</style>
+</head>
+
+<body>
+	<canvas id="myChart" width="100%"></canvas>
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['January', 'February', 'March'],
+        datasets: [{
+            label: '# of Votes',
+            data: [3, 5, 3],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 206, 86)'
+            ]
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+</body>
+
+</html>
